@@ -1,0 +1,34 @@
+img:hover {
+transform: scale(1.1,1.1);
+transition-duration: 500ms;
+transition-timing-function: ease-out;
+opacity: .5;
+}
+
+.img{
+    transform: scale(1,1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.image-wrapper{
+overflow: hidden;
+position: relative;
+}
+
+.member-icons{
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    right: 0;
+    
+}
+
+.image-wrapper:hover .member-icons{
+    bottom: 0;
+}
+
+.animate {
+    transition :all 0.3s ease-in;
+    
+}

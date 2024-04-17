@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Navroutes } from '../constants/navroutes';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-
+constructor(private route :Router){}
+onRegister(){
+  this.route.navigate([Navroutes.userRegistration])
+}
 }

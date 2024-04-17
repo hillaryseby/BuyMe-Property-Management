@@ -14,7 +14,7 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./property-card.component.scss'],
 })
 export class PropertyCardComponent implements OnInit {
-  propertyListings: PropertyInterface[] = [];
+  propertyListingsRent: PropertyInterface[] = [];
 
   constructor(
     private propertyService: PropertyListServiceService,
@@ -22,15 +22,16 @@ export class PropertyCardComponent implements OnInit {
     private route: Router
   ) {}
   async ngOnInit() {
-    this.http
-      .get<PropertyInterface[]>('../../assets/data.json')
-      .subscribe((data) => {
-        this.propertyListings = data;
-      });
+    this.propertyService.getProperty().subscribe((data)=>{
+      data.forEach((data)=>{ 
+        if(data.isRent){
+          this.propertyListingsRent.push(data);
+        }
+      })
+    })
   }
 
-  navigateToDetails(id : number) {
-    console.log(id);
-   this.route.navigate([Navroutes.propertyDetail])
+  navigateToDetails(id : any) {
+    this.route.navigate([Navroutes.propertyDetail, {'id' :id}]);
   }
 }

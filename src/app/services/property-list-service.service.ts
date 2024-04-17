@@ -1,47 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropertyListServiceService {
+propertyList :PropertyInterface[] = [];
+constructor(private http :HttpClient){}
 
-  propertyListing : PropertyInterface[] = [
-    {
-      id :1,
-      type : "house",
-      price : 25000,
-      imagesrc : "../../assets/images/download-23.webp"
-    } ,
-    {
-      id :2,
-      type :"apartment",
-      price :30000,
-      imagesrc : "../../assets/images/download-23.webp"
-    },
-    {
-      id :3,
-      type :"apartment",
-      price :30000,
-      imagesrc : "../../assets/images/download-23.webp"
-    },
-    {
-      id :4,
-      type :"apartment",
-      price :30000,
-      imagesrc : "../../assets/images/download-23.webp"
-    },
-    {
-      id :5,
-      type :"apartment",
-      price :30000,
-      imagesrc : "../../assets/images/download-23.webp"
-    }
-  ];
-
-  public getAllProperties() : PropertyInterface[]{
-    return this.propertyListing;
-  }
-  constructor() { }
+public getProperty(): Observable<PropertyInterface[]> {
+  return this.http.get<PropertyInterface[]>('../../assets/data.json');
+}
 }
 
  export interface PropertyInterface {
@@ -49,4 +19,5 @@ export class PropertyListServiceService {
   type :string;
   price :number;
   imagesrc : string;
+  isRent :boolean
 }

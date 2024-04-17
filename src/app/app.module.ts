@@ -9,7 +9,10 @@ import { PropertyListComponent } from './property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddPropertyComponent } from './add-property/add-property.component';
-import { PropertyDetailsComponent } from './property-details/property-details.component'
+import { PropertyDetailsComponent } from './property-details/property-details.component';
+import { BareBoneRegistrationComponent } from './bare-bone-registration/bare-bone-registration.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IConfig } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import { PropertyDetailsComponent } from './property-details/property-details.co
     PropertyListComponent,
     NavBarComponent,
     AddPropertyComponent,
-    PropertyDetailsComponent
+    PropertyDetailsComponent,
+    BareBoneRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
     FlexModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

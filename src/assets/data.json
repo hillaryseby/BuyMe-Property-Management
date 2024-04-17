@@ -3,12 +3,14 @@
       "id": 1,
       "type": "house",
       "price": 25000,
+      "isRent" : true,
       "imagesrc": "../../assets/images/download-23.webp"
     },
     {
       "id": 2,
       "type": "apartment",
       "price": 30000,
+      "isRent" : false,
       "imagesrc": "../../assets/images/download-23.webp"
     },
     {
@@ -21,12 +23,14 @@
       "id": 4,
       "type": "apartment",
       "price": 30000,
+      "isRent" : true,
       "imagesrc": "../../assets/images/download-23.webp"
     },
     {
       "id": 5,
       "type": "apartment",
       "price": 30000,
+      "isRent" : false,
       "imagesrc": "../../assets/images/download-23.webp"
     }
 ]

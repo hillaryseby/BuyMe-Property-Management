@@ -8,5 +8,7 @@ export class Navroutes {
 
     public static readonly freeProperty :string = 'freeProperty';
 
+    public static readonly userRegistration :string = 'register'
+
 }
 

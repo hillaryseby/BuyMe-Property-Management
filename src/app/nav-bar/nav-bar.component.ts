@@ -8,8 +8,18 @@ import { Navroutes } from '../constants/navroutes';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+  routeToBuyProperty : string = Navroutes.buyProperty;
 constructor(private route :Router){}
+
 onRegister(){
   this.route.navigate([Navroutes.userRegistration])
+}
+
+redirectToLogin(){
+  this.route.navigate([Navroutes.loginPage]);
+}
+
+navigateToBuyProperty(){
+  this.route.navigate([Navroutes.buyProperty]);
 }
 }

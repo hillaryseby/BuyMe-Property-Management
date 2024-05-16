@@ -1,0 +1,24 @@
+<div class="card card-center" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title text-center">Login</h5>
+    <form [formGroup]="form">
+      <div class="d-flex flex-column mb-3 mt-3">
+        <div class="form-floating">
+          <input class="form-control" id="userName"  placeholder="" formControlName="userName"/>
+          <label for="userName">UserName</label>
+        </div>
+      </div>
+<div class="d-flex flex-column mb-3">
+    <div class="form-floating">
+        <input class="form-control" type="password" placeholder="" id="password" formControlName="password" />
+        <label for="password">Password</label>
+    </div>
+</div>
+<div class="d-flex flex-column">
+    <div class="text-center">
+        <button type="button" class="btn btn-primary mobile-btn" (click)="onSubmit()"[disabled]="!form.valid">Log In</button>
+    </div>
+</div>
+    </form>
+  </div>
+</div>

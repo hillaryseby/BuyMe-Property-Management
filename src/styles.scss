@@ -1,6 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
-
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 .c-fo{
     background-color: rgb(241, 235, 235)
+}
+
+.card-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    //width: 210rem;
+}
+
+.mobile-btn{
+    width: 150px;
+}
+
+@media all and (max-width : 768px) {
+.card-center {
+    height: 300px;
+}
+.mobile-btn{
+    width: 200px;
+}
 }

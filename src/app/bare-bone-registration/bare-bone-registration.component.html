@@ -1,49 +1,81 @@
-<div class="container">
-    
+  
     <div class="card c-fo">
+      <div class="card-header" style="background-color: grey;">
+        Register User
+      </div>
       <div class="card-body">
+       
         <form [formGroup]="registrationForm!">
-          <div class="d-flex flex-column flex-md-row bd-highlight mb-3 justify-content-between">
+          <div class="d-flex flex-column  flex-lg-row bd-highlight mb-3 justify-content-around">
             <div class="flex-column bd-highlight col-lg-6">
               <div class="form-floating">
-                <input class="form-control" id="firstName" placeholder="" />
+                <input class="form-control" id="firstName" placeholder=""  formControlName="firstName" required/>
                 <label for="floatingInput"> First Name</label>
               </div>
+              <div *ngIf="registrationForm?.get('firstName')?.hasError('required') && registrationForm?.get('firstName')?.touched">
+                Field is required
+              </div>
             </div>
-            <div class="d-flex flex-column bd-highlight col-lg-6 ms-2">
+            <div class="d-flex flex-column bd-highlight col-lg-6">
                 <div class="form-floating">
-                    <input class="form-control" id="firstName" placeholder=""/>
+                    <input class="form-control" id="firstName" placeholder="" formControlName="lastName"/>
                     <label for="floatingInput"> Last Name</label>
+                </div>
+                <div *ngIf="registrationForm?.get('lastName')?.hasError('required') && registrationForm?.get('lastName')?.touched">
+                  Field is required
                 </div>
             </div>
           </div>
           <div class="d-flex flex-column bd-highlight mb-3">
             <div class="form-floating">
-                <input class="form-control" id="email" placeholder=""/>
+              <input class="form-control" id="userName" placeholder="" formControlName="userName"/>
+              <label>UserName</label>
+            </div>
+
+          </div>
+          <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="form-floating">
+                <input class="form-control" id="email" placeholder="" formControlName="email"/>
                 <label for="email">Email</label>
             </div>
-          </div>
-          <div class="d-flex flex-column mb-3">
-            <div class="form-floating">
-                <input class="form-control" id="mobile" placeholder="" type="number"/>
-                <label for="mobile">Mobile</label>
+            <div *ngIf="registrationForm?.get('email')?.hasError('required') && registrationForm?.get('email')?.touched">
+              Field is required
             </div>
           </div>
           <div class="d-flex flex-column mb-3">
             <div class="form-floating">
-                <input class="form-control" id="password" placeholder="" type="password"/>
+                <input class="form-control" id="mobile" placeholder="" type="number"  formControlName="mobile"/>
+                <label for="mobile">Mobile</label>
+            </div>
+            <div *ngIf="registrationForm?.get('mobile')?.hasError('required') && registrationForm?.get('mobile')?.touched">
+              Field is required
+            </div>
+          </div>
+          <div class="d-flex flex-column mb-3">
+            <div class="form-floating">
+                <input class="form-control" id="password" placeholder="" type="password" formControlName="password"/>
                 <label for="password">Password</label>
+            </div>
+            <div *ngIf="registrationForm?.get('password')?.hasError('required') && registrationForm?.get('password')?.touched">
+            Field is required
             </div>
           </div>
 
           <div class="d-flex flex-column mb-3">
             <div class="form-floating">
-                <input class="form-control" id="confirmPassword" placeholder="" type="password"/>
+                <input class="form-control" id="confirmPassword" placeholder="" type="password" formControlName="confirmPassword"/>
                 <label for="confirmPassword">Confirm Password</label>
             </div>
+            <!-- <div *ngIf="registrationForm?.get('confirmPassword')?.hasError('required') && registrationForm?.get('confirmassword')?.touched">
+              Field is required
+              </div> -->
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div *ngIf="registrationForm?.hasError('mismatched') && 
+          (registrationForm?.get('confirmPassword')?.dirty && registrationForm?.get('confirmPassword')?.touched)" style="color: red;">
+           Passwords do not match
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+           
         </form>
       </div>
     </div>
-</div>

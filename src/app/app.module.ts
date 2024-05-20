@@ -13,7 +13,10 @@ import { PropertyDetailsComponent } from './property-details/property-details.co
 import { BareBoneRegistrationComponent } from './bare-bone-registration/bare-bone-registration.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IConfig } from 'ngx-mask';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'primeng/toast';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,8 @@ import { IConfig } from 'ngx-mask';
     NavBarComponent,
     AddPropertyComponent,
     PropertyDetailsComponent,
-    BareBoneRegistrationComponent
+    BareBoneRegistrationComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +35,11 @@ import { IConfig } from 'ngx-mask';
     FlexModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

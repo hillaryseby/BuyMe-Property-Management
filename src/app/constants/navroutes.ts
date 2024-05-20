@@ -10,5 +10,9 @@ export class Navroutes {
 
     public static readonly userRegistration :string = 'register'
 
+    public static readonly loginPage :string = 'login';
+
+    public static readonly buyProperty : string = 'buy'
+
 }
 

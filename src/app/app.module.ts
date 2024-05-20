@@ -16,6 +16,7 @@ import { IConfig } from 'ngx-mask';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +37,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from '../services/auth-service.service';
 import { Router } from '@angular/router';
 import { Navroutes } from '../constants/navroutes';
+import { MessageService } from 'primeng/api';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
@@ -11,9 +13,12 @@ import { Navroutes } from '../constants/navroutes';
 })
 export class LoginPageComponent implements OnInit {
   form!: FormGroup;
-  constructor(private authService: AuthServiceService,
-              private router : Router
+  constructor(
+    private authService: AuthServiceService,
+    private router: Router,
+    private messageService: MessageService
   ) {}
+
   ngOnInit(): void {
     this.createForm();
   }
@@ -32,9 +37,19 @@ export class LoginPageComponent implements OnInit {
       userName: loginCredentials.userName,
       password: loginCredentials.password,
     } as userDetails;
-    
-    if(this.authService.authUser(userCred)){
-      this.router.navigate([Navroutes.buyProperty]);
+
+    if (this.authService.authUser(userCred)) {
+      this.messageService.add({
+        severity: 'success',
+        detail: 'Sucessfully logged',
+      });
+      setTimeout(() => {
+        this.router.navigate([Navroutes.buyProperty]);
+      }, 2000);
+    }
+
+    else{
+      this.messageService.add({severity:'warn', detail : 'Something went wrong'})
     }
   }
 }

@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MessageService } from 'primeng/api';
+import { MenuModule } from 'primeng/menu';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { MessageService } from 'primeng/api';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+   MenuModule,
+   ButtonModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

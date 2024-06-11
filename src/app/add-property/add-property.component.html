@@ -1,1 +1,41 @@
-<p>add-property works!</p>
+<div class="card d-flex" style="width: 50 rem">
+  <div class="card-header">Add A New listing</div>
+  <div class="card-body">
+    <form>
+      <div class="bd-highlight">
+        <div class="flex-column  form-floating">
+
+            <input
+              class="form-control name mb-3"
+              id="firstName"
+              placeholder=""
+              required
+            />
+            <label for="floatingInput">Name</label>
+        
+        </div>
+        <div class="flex-column form-floating">
+           <select class="form-select mb-3">
+            <option *ngFor="let type of propertyTypes">
+                {{type}}
+            </option>
+           </select>
+        </div>
+        <div class="flex-column form-floating">
+            <select class="form-select mb-3">
+                <option *ngFor="let listing of listingType"
+                >
+            {{listing}}
+            </option>
+            </select>
+        </div>
+        <div class="flex-column form-floating">
+           <input class="form-control mb-3"
+            placeholder=""
+            value="$"/>
+            <label>Price</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

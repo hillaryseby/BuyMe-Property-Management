@@ -66,9 +66,6 @@
                 <input class="form-control" id="confirmPassword" placeholder="" type="password" formControlName="confirmPassword"/>
                 <label for="confirmPassword">Confirm Password</label>
             </div>
-            <!-- <div *ngIf="registrationForm?.get('confirmPassword')?.hasError('required') && registrationForm?.get('confirmassword')?.touched">
-              Field is required
-              </div> -->
           </div>
           <div *ngIf="registrationForm?.hasError('mismatched') && 
           (registrationForm?.get('confirmPassword')?.dirty && registrationForm?.get('confirmPassword')?.touched)" style="color: red;">

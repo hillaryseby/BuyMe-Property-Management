@@ -69,6 +69,10 @@ navigateToBuyProperty(){
   this.route.navigate([Navroutes.buyProperty]);
 }
 
+navigateToAddProperty(){
+  this.route.navigate([Navroutes.addProperty]);
+}
+
 isLoggedIn() : boolean{
   return this.authService.isLoggedIn() !== null ? true : false;
 

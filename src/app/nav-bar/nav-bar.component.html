@@ -1,7 +1,7 @@
 <p-toast></p-toast>
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">BuyMe Property Management</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -32,9 +32,9 @@
           >
         </li>
       </ul>
-      <div class="d-flex ">
+      <div class="d-flex">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li *ngIf="!isLoggedIn()" class="nav-item  me-2">
+          <li *ngIf="!isLoggedIn()" class="nav-item me-2">
             <a
               class="form-control"
               style="cursor: pointer"
@@ -42,7 +42,7 @@
               >Register</a
             >
           </li>
-          <li *ngIf="!isLoggedIn()" class="nav-item  me-2">
+          <li *ngIf="!isLoggedIn()" class="nav-item me-2">
             <a
               class="btn btn-outline-success"
               type="submit"
@@ -52,8 +52,11 @@
             >
           </li>
           <li *ngIf="isLoggedIn()" class="nav-item">
-           <p-menu #menu [model]="items" [popup]="true" />
-           <i class="pi pi-user btn btn-outline-success" (click)="menu.toggle($event)"></i>
+            <p-menu #menu [model]="items" [popup]="true" />
+            <i
+              class="pi pi-user btn btn-outline-success"
+              (click)="menu.toggle($event)"
+            ></i>
           </li>
         </ul>
       </div>

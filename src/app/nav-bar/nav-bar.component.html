@@ -26,7 +26,7 @@
           <a
             class="nav-link"
             routerLinkActive="active"
-            routerLink="/freeProperty"
+            (click)="navigateToAddProperty()"
             tabindex="-1"
             >ListProperty(free)</a
           >
@@ -49,15 +49,6 @@
               style="cursor: pointer"
               (click)="redirectToLogin('login')"
               >login</a
-            >
-          </li>
-          <li *ngIf="isLoggedIn()" class="nav-item me-2">
-            <a
-              class="btn btn-outline-success"
-              type="submit"
-              style="cursor: pointer"
-              (click)="redirectToLogin('logout')"
-              >logout</a
             >
           </li>
           <li *ngIf="isLoggedIn()" class="nav-item">

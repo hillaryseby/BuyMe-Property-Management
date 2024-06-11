@@ -19,6 +19,12 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MessageService } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
+import { AddPropertyMainPageComponent } from './add-property-main-page/add-property-main-page.component';
+import { TabViewModule } from 'primeng/tabview';
+import { PricingComponentComponent } from './pricing-component/pricing-component.component';
+import { AddressComponentComponent } from './address-component/address-component.component';
+import { OtherDetailsComponent } from './other-details/other-details.component';
+import { UploadPictureComponent } from './upload-picture/upload-picture.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,12 @@ import { ButtonModule } from 'primeng/button';
     AddPropertyComponent,
     PropertyDetailsComponent,
     BareBoneRegistrationComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    AddPropertyMainPageComponent,
+    PricingComponentComponent,
+    AddressComponentComponent,
+    OtherDetailsComponent,
+    UploadPictureComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +52,8 @@ import { ButtonModule } from 'primeng/button';
     BrowserAnimationsModule,
     ToastModule,
    MenuModule,
-   ButtonModule
+   ButtonModule,
+   TabViewModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

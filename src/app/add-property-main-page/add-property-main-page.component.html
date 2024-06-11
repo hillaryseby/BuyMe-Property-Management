@@ -1,0 +1,31 @@
+<div class="card tabs d-flex">
+    <p-tabView [scrollable]="true" [(activeIndex)]="activeIndex">
+        <p-tabPanel header="Basic Info">
+            <app-add-property>
+
+            </app-add-property>
+           
+        </p-tabPanel>
+        <p-tabPanel header="Pricing And Area">
+            <app-pricing-component></app-pricing-component>
+        </p-tabPanel>
+        <p-tabPanel header="Address">
+            <app-address-component></app-address-component>
+        </p-tabPanel>
+        <p-tabPanel header="Other Details">
+            <app-other-details></app-other-details>
+        </p-tabPanel>
+        <p-tabPanel header="Photos">
+            <app-upload-picture></app-upload-picture>
+        </p-tabPanel>
+        <div class="container">
+            <button *ngIf="activeIndex>0" class="btn btn-primary btn-prev" (click)="goToPrevious()">
+                Previous
+            </button>
+                <button (click)="jumpToNextIndex()"
+                class="btn btn-primary btn-panel" style="margin-top: 5px;">Next
+                    </button>
+            
+        </div>
+    </p-tabView> 
+</div>

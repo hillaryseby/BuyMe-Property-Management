@@ -25,6 +25,9 @@ import { PricingComponentComponent } from './pricing-component/pricing-component
 import { AddressComponentComponent } from './address-component/address-component.component';
 import { OtherDetailsComponent } from './other-details/other-details.component';
 import { UploadPictureComponent } from './upload-picture/upload-picture.component';
+import { CalendarModule } from 'primeng/calendar';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { RadioButtonModule } from 'primeng/radiobutton';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,10 @@ import { UploadPictureComponent } from './upload-picture/upload-picture.componen
     ToastModule,
    MenuModule,
    ButtonModule,
-   TabViewModule
+   TabViewModule,
+   CalendarModule,
+   FloatLabelModule,
+   RadioButtonModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

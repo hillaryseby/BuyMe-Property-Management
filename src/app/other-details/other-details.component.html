@@ -1,1 +1,30 @@
-<p>other-details works!</p>
+<div class="flex-row gap-5">
+    <label>Ready To Move? </label>
+
+<div class="flex-column form-check form-check-inline">
+<input  type="radio" id="yes"/>
+<label for="yes">Yes</label>
+</div>
+<div class="flex-column form-check form-check-inline">
+    <input  type="radio" id="yes"/>
+    <label for="yes">Yes</label>
+</div>
+<div class="flex-column mt-5" >
+<p-floatLabel>
+    <p-calendar [showIcon]="true"
+    inputId="availableDate"
+    />
+    <label for="availableDate">Available From</label>
+</p-floatLabel>
+    
+
+</div>
+<div class="flex-column form-floating mb-3 mt-3">
+    <input class="form-control" id="age" placeholder=""required/>
+    <label for="age">Age of property</label>
+</div>
+<div class="flex-column form-floating mb-3">
+    <textarea id="desc"> </textarea>
+    <label for="desc">Description</label>
+</div>
+</div>

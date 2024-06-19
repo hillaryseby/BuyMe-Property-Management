@@ -1,31 +1,66 @@
-<div class="card tabs d-flex">
-    <p-tabView [scrollable]="true" [(activeIndex)]="activeIndex">
-        <p-tabPanel header="Basic Info">
-            <app-add-property>
 
-            </app-add-property>
-           
-        </p-tabPanel>
-        <p-tabPanel header="Pricing And Area">
-            <app-pricing-component></app-pricing-component>
-        </p-tabPanel>
-        <p-tabPanel header="Address">
-            <app-address-component></app-address-component>
-        </p-tabPanel>
-        <p-tabPanel header="Other Details">
-            <app-other-details></app-other-details>
-        </p-tabPanel>
-        <p-tabPanel header="Photos">
-            <app-upload-picture></app-upload-picture>
-        </p-tabPanel>
-        <div class="container">
-            <button *ngIf="activeIndex>0" class="btn btn-primary btn-prev" (click)="goToPrevious()">
-                Previous
-            </button>
-                <button (click)="jumpToNextIndex()"
-                class="btn btn-primary btn-panel" style="margin-top: 5px;">Next
-                    </button>
-            
-        </div>
-    </p-tabView> 
+<div class="row">
+    
+    <div class="card tabs d-flex col">
+        <p-tabView [scrollable]="true" [(activeIndex)]="activeIndex">
+            <p-tabPanel header="Basic Info">
+                <app-add-property 
+                [nextPage]="nextPressed"
+                (valueEmit)="propertyBasicDetailsAdded($event)"
+                >
+    
+                </app-add-property>
+    
+            </p-tabPanel>
+            <p-tabPanel header="Pricing And Area">
+                <app-pricing-component></app-pricing-component>
+            </p-tabPanel>
+            <p-tabPanel header="Address">
+                <app-address-component></app-address-component>
+            </p-tabPanel>
+            <p-tabPanel header="Other Details">
+                <app-other-details></app-other-details>
+            </p-tabPanel>
+            <p-tabPanel header="Photos">
+                <app-upload-picture></app-upload-picture>
+            </p-tabPanel>
+            <div *ngIf="activeIndex !==4" class="container">
+                <button *ngIf="activeIndex>0" class="btn btn-primary btn-prev" (click)="goToPrevious()">
+                    Previous
+                </button>
+                    <button (click)="jumpToNextIndex()"
+                    class="btn btn-primary btn-panel" style="margin-top: 5px;">Next
+                        </button>
+    
+            </div>
+            <div *ngIf="activeIndex ===4" class="container">
+                <button *ngIf="activeIndex>0" class="btn btn-primary btn-prev" (click)="goToPrevious()">
+                    Previous
+                </button>
+                    <button (click)="jumpToNextIndex()"
+                    class="btn btn-primary btn-panel" style="margin-top: 5px;">Save
+                        </button>
+    
+            </div>
+    
+        </p-tabView>
+    </div>
+    <div class=" d-flex col">
+    
+            <h2>Your Property Preview</h2>
+            <div *ngIf="basicPropertyDetails !==null" fxFlex fxLayout="row-wrap">
+    
+    
+                <div  fxFlex fxLayout="column">
+    
+                    <p>{{basicPropertyDetails.propertyName}}</p>
+                </div>
+    
+                <div fxFlex fxLayout="column">
+                    asfsfsdf
+                </div>
+            </div>
+
+
+    </div>
 </div>

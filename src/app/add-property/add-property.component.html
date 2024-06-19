@@ -1,39 +1,55 @@
 <div class="card d-flex" style="width: 50 rem">
   <div class="card-header">Add A New listing</div>
   <div class="card-body">
-    <form>
+    <form [formGroup]="addPropertyForm">
       <div class="bd-highlight">
-        <div class="flex-column  form-floating">
+        <div class="d-flex flex-column  form-floating">
 
             <input
               class="form-control name mb-3"
               id="firstName"
               placeholder=""
               required
+              formControlName="propertyName"
             />
             <label for="floatingInput">Name</label>
         
         </div>
-        <div class="flex-column form-floating">
-           <select class="form-select mb-3">
-            <option *ngFor="let type of propertyTypes">
-                {{type}}
+
+        <div class="d -flex flex-column form-floating">
+          <select id="propertyTypeSelect" 
+          class="form-select mb-3" 
+          style="cursor: pointer;"
+          formControlName="buildingTypes">
+            <option selected>Select the building type</option>
+            <option *ngFor="let type of propertyTypes" value="">
+              {{type}}
             </option>
-           </select>
+          </select>
         </div>
-        <div class="flex-column form-floating">
-            <select class="form-select mb-3">
+        <div class="d-flex flex-column form-floating" aria-label="Default select example">
+            <select class="form-select mb-3" 
+            style="cursor: pointer;"
+            formControlName="listingTypeName">
+              <option selected>Select the listing type</option>
                 <option *ngFor="let listing of listingType"
                 >
             {{listing}}
             </option>
             </select>
         </div>
-        <div class="flex-column form-floating">
+        <div class="d-flex flex-column form-floating">
            <input class="form-control mb-3"
+           formControlName="price"
             placeholder=""
             value="$"/>
             <label>Price</label>
+        </div>
+
+        <div class="d-flex flex-row" style="float: right;">
+          <button class="btn btn-primary" (click)="onPropertyAdd()">
+            Add
+          </button>
         </div>
       </div>
     </form>
